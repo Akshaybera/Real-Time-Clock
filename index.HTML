@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+            body {
+                    font-family: 'Courier Prime', monospace;
+                    background-color: #9779FF /#A0AFFF #A797FF/;
+                }
+                h1 {
+                    font-family: 'Goldman', cursive;
+                    margin: 10px;
+                    padding: 10px;
+                }
+                #clock {
+                    text-align: center;
+                    background-color: #000;
+                    color: #06FE06;
+                    width: 70vw;
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin: auto;
+                    font-size: 10vw;
+                     
+                }
+                p {
+                    text-align: right;
+                    padding: 10px;
+                    margin: 10px;
+                    font-family: 'Goldman', cursive;
+                    font-family: 'Roboto Slab', serif;
+                }
+                a {
+                    text-decoration: none;
+                    color: #1F002F;
+                }
+                body {
+                      background-size: 40px 40px;
+                      background-image:
+                      linear-gradient(to right, grey 1px, transparent 1px),
+                      linear-gradient(to bottom, grey 1px, transparent 1px);
+                    }
+        </style>
+        <script>
+            function displayClock() {
+            var time = new Date();
+            var hrs = time.getHours();
+            var min = time.getMinutes();
+            var sec = time.getSeconds();
+            var amPm = 'AM';
+             
+            if (hrs > 12) {
+                amPm = 'PM';
+            }
+             
+            if (hrs > 12) {
+                hrs = hrs - 12;
+            }
+             
+            if (hrs == 0) {
+                hrs = 12;
+            }
+             
+            if (hrs < 10) {
+                hrs = '0' + hrs;
+            }
+             
+            if (min < 10) {
+                min = '0' + min;
+            }
+             
+            if (sec < 10) {
+                sec = '0' + sec;
+            }
+             
+            document.getElementById('clock').innerHTML = hrs + ':' + min + ':' + sec + ' ' + amPm;
+        }
+ 
+        setInterval(displayClock, 100)
+        </script>
+    </body>
+    <head>
+    
+        <title>Real Time</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1>Digital Clock:</h1>
+            <div id="clock"></div>
+        </div>
+        <p><a href="https://www.sololearn.com/Profile/20008366/?ref=app" target="_blank"> Made by Akshay Bera</a></p>
+    </body>
+</html>
